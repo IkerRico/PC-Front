@@ -1,0 +1,16 @@
+<script></script>
+<template>
+  <div class="contenedor">
+    <div class="row">
+      <h1 class="offset-1 col-3 mt-3">Producción</h1>
+    </div>
+  </div>
+</template>
+
+<style>
+.contenedor {
+  height: 100vh;
+  background-color: #b9b9b9;
+  border-color: #fff;
+}
+</style>

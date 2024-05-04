@@ -8,7 +8,7 @@ export default {
 }
 </script>
 <template>
-  <div id="app" class="container-fluid">
+  <div id="app" class="container-fluid m-0 p-0">
     <RouterView />
   </div>
 </template>
