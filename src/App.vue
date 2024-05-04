@@ -16,10 +16,14 @@ export default {
 <style>
 html {
   background-color: #929292;
-  height: 100%;
   font-family: 'Open sans';
+  margin: 0;
+  padding: 0;
 }
-
+body {
+  margin: 0;
+  padding: 0;
+}
 #app {
   height: 100%;
   font-family: 'Open sans';
