@@ -1,10 +1,16 @@
 <script>
-export default {}
+import NavbarAdministracion from '@/components/NavbarAdministracion.vue'
+export default {
+  components: {
+    NavbarAdministracion
+  }
+}
 </script>
 <template>
   <div class="contenedor">
     <div class="row">
-      <h1 class="offset-1 col-3 mt-3">Administración</h1>
+      <NavbarAdministracion></NavbarAdministracion>
+      <h1 class="col-3 mt-3">Administración</h1>
     </div>
   </div>
 </template>
