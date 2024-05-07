@@ -16,7 +16,7 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 .nav-bar {
   background-color: #5f4522;
   height: 100vh;

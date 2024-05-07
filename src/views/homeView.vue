@@ -34,7 +34,7 @@ export default {
   </div>
 </template>
 
-<style>
+<style scoped>
 .contenedor {
   height: 100vh;
   margin: 0;

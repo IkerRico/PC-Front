@@ -1,7 +1,7 @@
 <template>
   <div>
     <button class="btn" type="button" v-on:click="volverMenuPrincipal">
-      <i class="bi bi-arrow-return-left"></i>
+      <i class="bi bi-house"></i>
     </button>
   </div>
 </template>
@@ -14,9 +14,9 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 i {
-  font-size: 4rem;
-  color: black#5f4522;
+  font-size: 3rem;
+  color: black;
 }
 </style>
