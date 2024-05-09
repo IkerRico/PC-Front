@@ -12,17 +12,7 @@ export default {
   <div class="contenedor row p-0 m-0">
     <NavbarAdministracion></NavbarAdministracion>
     <div class="col mt-3">
-      <TituloDeMenu titulo="Administración"></TituloDeMenu>
-      <div class="mt-3">
-        <ol>
-          <router-link to="/pedidos" class="router-link">
-            <li>Pedidos</li>
-          </router-link>
-          <li>Albaranes</li>
-          <li>Pedidos de compras</li>
-          <li>Clientes</li>
-        </ol>
-      </div>
+      <TituloDeMenu titulo="Pedidos"></TituloDeMenu>
     </div>
   </div>
 </template>
@@ -34,9 +24,12 @@ export default {
   border-color: #fff;
 }
 
-.router-link {
-  text-decoration: none;
-  color: inherit;
+hr {
+  margin: 0;
+}
+
+h1 {
+  font-size: 60px;
 }
 
 li {
@@ -45,8 +38,8 @@ li {
 }
 
 li:hover {
-  font-size: 45px;
+  font-size: 50px;
   margin-left: 10%;
-  transform: scale(1);
+  transform: scale(1.1);
 }
 </style>

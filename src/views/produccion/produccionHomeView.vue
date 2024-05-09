@@ -1,8 +1,21 @@
-<script></script>
+<script>
+import NavbarProduccion from '@/components/NavbarProduccion.vue'
+import TituloDeMenu from '@/components/TituloDeMenu.vue'
+export default {
+  components: {
+    TituloDeMenu,
+    NavbarProduccion
+  }
+}
+</script>
 <template>
-  <div class="contenedor">
-    <div class="row">
-      <h1 class="offset-1 col-3 mt-3">Producción</h1>
+  <div class="contenedor row p-0 m-0">
+    <NavbarProduccion></NavbarProduccion>
+    <div class="col mt-3">
+      <TituloDeMenu titulo="Producción"></TituloDeMenu>
+      <div class="mt-3">
+        <ol></ol>
+      </div>
     </div>
   </div>
 </template>
