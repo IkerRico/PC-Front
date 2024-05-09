@@ -1,8 +1,5 @@
 <template>
   <div class="nav-bar col-12 d-none d-lg-block m-0 p-0 text-center">
-    <div class="nav-bar-element"></div>
-    <div class="nav-bar-element"></div>
-    <div class="nav-bar-element"></div>
     <div class="nav-bar-element">
       <boton-menu-principal></boton-menu-principal>
     </div>
@@ -25,6 +22,10 @@ export default {
   justify-content: center;
   flex-direction: column;
   margin: 0;
+}
+
+.nav-bar-element {
+  height: 10%;
 }
 
 .nav-bar-element:hover {
