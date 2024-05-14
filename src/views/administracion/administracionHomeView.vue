@@ -1,12 +1,12 @@
 <script>
-import NavbarAdministracion from '@/components/NavbarAdministracion.vue'
-import TituloDeMenu from '@/components/TituloDeMenu.vue'
+import NavbarAdministracion from "@/components/NavbarAdministracion.vue";
+import TituloDeMenu from "@/components/TituloDeMenu.vue";
 export default {
   components: {
     NavbarAdministracion,
-    TituloDeMenu
-  }
-}
+    TituloDeMenu,
+  },
+};
 </script>
 <template>
   <div class="contenedor row p-0 m-0">
