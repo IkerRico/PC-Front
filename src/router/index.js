@@ -1,11 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import produccionHomeView from '../views/Produccion/produccionHomeView.vue'
-import administracionHomeView from '../views/Administracion/administracionHomeView.vue'
-import pedidosHomeView from '../views/Administracion/Pedidos/pedidosHomeView.vue'
-import gestionArticulosMain from '../views/Administracion/Articulos/gestionArticulosMain.vue'
-import articulosMain from '../views/Administracion/Articulos/GestionArticulos/articulosMain.vue'
-
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -17,27 +11,28 @@ const router = createRouter({
     {
       path: '/Produccion',
       name: 'Produccion',
-      component: produccionHomeView
+      component: () => import('../views/Produccion/produccionHomeView.vue')
     },
     {
       path: '/Administracion',
       name: 'Administracion',
-      component: () => administracionHomeView
+      component: () => import('../views/Administracion/administracionHomeView.vue')
     },
     {
       path: '/Pedidos',
       name: 'Pedidos',
-      component: pedidosHomeView
+      component: () => import('../views/Administracion/Pedidos/pedidosHomeView.vue')
     },
     {
       path: '/GestionArticulos',
       name: 'GestionArticulos',
-      component: gestionArticulosMain
+      component: () => import('../views/Administracion/Articulos/gestionArticulosMain.vue')
     },
     {
       path: '/GestionArticulos/Articulos',
       name: 'Articulos',
-      component: articulosMain
+      component: () =>
+        import('../views/Administracion/Articulos/GestionArticulos/articulosMain.vue')
     }
   ]
 })
