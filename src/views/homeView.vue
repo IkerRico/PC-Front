@@ -2,13 +2,13 @@
 export default {
   methods: {
     irProduccionMenu: function () {
-      this.$router.push('/produccion')
+      this.$router.push("/produccion");
     },
     irAdministracionMenu: function () {
-      this.$router.push('/administracion')
-    }
-  }
-}
+      this.$router.push("/administracion");
+    },
+  },
+};
 </script>
 <template>
   <div class="contenedor d-flex flex-column justify-content-center">
@@ -18,16 +18,38 @@ export default {
       </div>
     </div>
     <div class="buttons-section row text-center m-0 p-0">
-      <div class="button-selector col m-0 p-0">
-        <button type="button" class="btn btn-primary btn-lg" v-on:click="irAdministracionMenu">
+      <div class="button-selector col-6 m-0 p-0">
+        <button
+          type="button"
+          class="btn btn-primary btn-lg"
+          v-on:click="irAdministracionMenu"
+        >
           <i class="bi bi-cart"></i>
           <span>Administración</span>
         </button>
       </div>
-      <div class="button-selector col m-0">
-        <button type="button" class="btn btn-primary btn-lg" v-on:click="irProduccionMenu">
+      <div class="button-selector col-6 m-0 p-0">
+        <button
+          type="button"
+          class="btn btn-primary btn-lg"
+          v-on:click="irProduccionMenu"
+        >
           <i class="bi bi-truck"></i>
           <span>Producción</span>
+        </button>
+      </div>
+    </div>
+    <div class="buttons-section row text-center m-0 p-0">
+      <div class="button-selector col-6 m-0 p-0">
+        <button type="button" class="btn btn-primary btn-lg">
+          <i class="bi bi-pc-display"></i>
+          <span>Informatica</span>
+        </button>
+      </div>
+      <div class="button-selector col-6 m-0 p-0">
+        <button type="button" class="btn btn-primary btn-lg">
+          <i class="bi bi-credit-card-2-front-fill"></i>
+          <span>Comerciales</span>
         </button>
       </div>
     </div>
@@ -36,6 +58,9 @@ export default {
 
 <style scoped>
 .contenedor {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   height: 100vh;
   margin: 0;
   background-color: #b9b9b9;
