@@ -9,19 +9,30 @@ const router = createRouter({
       component: () => import('../views/homeView.vue')
     },
     {
-      path: '/produccion',
-      name: 'produccion',
-      component: () => import('../views/produccion/produccionHomeView.vue')
+      path: '/Produccion',
+      name: 'Produccion',
+      component: () => import('../views/Produccion/produccionHomeView.vue')
     },
     {
-      path: '/administracion',
-      name: 'administracion',
-      component: () => import('../views/administracion/administracionHomeView.vue')
+      path: '/Administracion',
+      name: 'Administracion',
+      component: () => import('../views/Administracion/administracionHomeView.vue')
     },
     {
-      path: '/pedidos',
-      name: 'pedidos',
-      component: () => import('../views/administracion/pedidos/pedidosHomeView.vue')
+      path: '/Pedidos',
+      name: 'Pedidos',
+      component: () => import('../views/Administracion/Pedidos/pedidosHomeView.vue')
+    },
+    {
+      path: '/GestionArticulos',
+      name: 'GestionArticulos',
+      component: () => import('../views/Administracion/Articulos/gestionArticulosMain.vue')
+    },
+    {
+      path: '/GestionArticulos/Articulos',
+      name: 'Articulos',
+      component: () =>
+        import('../views/Administracion/Articulos/GestionArticulos/articulosMain.vue')
     }
   ]
 })

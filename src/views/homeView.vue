@@ -12,13 +12,9 @@ export default {
 </script>
 <template>
   <div class="contenedor d-flex flex-column justify-content-center">
-    <div class="title-selector row text-center m-0 p-0">
-      <div class="section-selector col">
-        <h1>Elije una opción</h1>
-      </div>
-    </div>
+    <div class="title-selector row text-center m-0 p-0"></div>
     <div class="buttons-section row text-center m-0 p-0">
-      <div class="button-selector col-6 m-0 p-0">
+      <div class="button-selector col-sm-6 col-12 m-0 p-0">
         <button
           type="button"
           class="btn btn-primary btn-lg"
@@ -28,7 +24,7 @@ export default {
           <span>Administración</span>
         </button>
       </div>
-      <div class="button-selector col-6 m-0 p-0">
+      <div class="button-selector col-sm-6 col-12 m-0 p-0">
         <button
           type="button"
           class="btn btn-primary btn-lg"
@@ -40,13 +36,13 @@ export default {
       </div>
     </div>
     <div class="buttons-section row text-center m-0 p-0">
-      <div class="button-selector col-6 m-0 p-0">
+      <div class="button-selector col-sm-6 col-12 m-0 p-0">
         <button type="button" class="btn btn-primary btn-lg">
           <i class="bi bi-pc-display"></i>
           <span>Informatica</span>
         </button>
       </div>
-      <div class="button-selector col-6 m-0 p-0">
+      <div class="button-selector col-sm-6 col-12col-6 m-0 p-0">
         <button type="button" class="btn btn-primary btn-lg">
           <i class="bi bi-credit-card-2-front-fill"></i>
           <span>Comerciales</span>

@@ -9,14 +9,14 @@
 <script>
 export default {
   props: {
-    isLoading: Boolean,
+    isLoading: Boolean
   },
   data() {
     return {
-      chargeLoader: this.isLoading,
-    };
-  },
-};
+      chargeLoader: this.isLoading
+    }
+  }
+}
 </script>
 
 <style scoped>

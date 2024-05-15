@@ -1,26 +1,23 @@
 <script>
-import NavbarAdministracion from "@/components/NavbarAdministracion.vue";
-import TituloDeMenu from "@/components/TituloDeMenu.vue";
+import NavbarAdministracion from '@/components/NavbarAdministracion.vue'
+import TituloDeMenu from '@/components/TituloDeMenu.vue'
 export default {
   components: {
     NavbarAdministracion,
-    TituloDeMenu,
-  },
-};
+    TituloDeMenu
+  }
+}
 </script>
 <template>
   <div class="contenedor row p-0 m-0">
     <NavbarAdministracion></NavbarAdministracion>
     <div class="col mt-3">
-      <TituloDeMenu titulo="Administración"></TituloDeMenu>
+      <TituloDeMenu titulo="Gestión Artículos"></TituloDeMenu>
       <div class="mt-3">
         <ol>
-          <router-link to="/pedidos" class="router-link">
-            <li>Pedidos</li>
+          <router-link to="/GestionArticulos/Articulos" class="router-link">
+            <li>Articulos</li>
           </router-link>
-          <li>Albaranes</li>
-          <li>Pedidos de compras</li>
-          <li>Clientes</li>
         </ol>
       </div>
     </div>
