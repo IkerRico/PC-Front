@@ -1,11 +1,17 @@
 <template>
-  <div>
+  <div class="mt-3">
     <table>
       <thead style="background-color: #5f4522; color: white">
         <tr>
-          <th v-for="(columnTitle, index) in titulosColumna" :key="index" class="columna">
-            {{ columnTitle }}
+          <th
+            v-for="(column, index) in titulosColumna"
+            :key="index"
+            :style="{ width: column.width }"
+            class="columna"
+          >
+            {{ column.title }}
           </th>
+          <th class="columna" style="width: 10%">Acciones</th>
         </tr>
       </thead>
       <tbody>
@@ -15,6 +21,9 @@
           style="background-color: white; color: black"
         >
           <td v-for="(columna, colIndex) in filaData" :key="colIndex">{{ columna }}</td>
+          <td>
+            <button @click="accionFila(filaData)">Acción</button>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -36,7 +45,7 @@ export default {
   data() {
     return {
       paginaActual: 1,
-      itemsPorPagina: 18
+      itemsPorPagina: 15
     }
   },
   computed: {
@@ -59,6 +68,11 @@ export default {
       if (this.paginaActual < this.totalPaginas) {
         this.paginaActual++
       }
+    },
+    accionFila(filaData) {
+      // Lógica para la acción en la fila específica
+      console.log(`Acción en fila ${filaData.id}`)
+      // Aquí puedes trabajar con toda la fila de datos
     }
   }
 }
@@ -83,7 +97,7 @@ th {
 }
 
 .columna {
-  width: 150px;
+  width: 150px; /* Ancho predeterminado */
 }
 
 .pagination {

@@ -2,34 +2,26 @@
 export default {
   methods: {
     irProduccionMenu: function () {
-      this.$router.push("/produccion");
+      this.$router.push('/produccion')
     },
     irAdministracionMenu: function () {
-      this.$router.push("/administracion");
-    },
-  },
-};
+      this.$router.push('/administracion')
+    }
+  }
+}
 </script>
 <template>
   <div class="contenedor d-flex flex-column justify-content-center">
     <div class="title-selector row text-center m-0 p-0"></div>
     <div class="buttons-section row text-center m-0 p-0">
       <div class="button-selector col-sm-6 col-12 m-0 p-0">
-        <button
-          type="button"
-          class="btn btn-primary btn-lg"
-          v-on:click="irAdministracionMenu"
-        >
+        <button type="button" class="btn btn-primary btn-lg" v-on:click="irAdministracionMenu">
           <i class="bi bi-cart"></i>
           <span>Administración</span>
         </button>
       </div>
       <div class="button-selector col-sm-6 col-12 m-0 p-0">
-        <button
-          type="button"
-          class="btn btn-primary btn-lg"
-          v-on:click="irProduccionMenu"
-        >
+        <button type="button" class="btn btn-primary btn-lg" v-on:click="irProduccionMenu">
           <i class="bi bi-truck"></i>
           <span>Producción</span>
         </button>

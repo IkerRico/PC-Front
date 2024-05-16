@@ -14,7 +14,10 @@ export default {
   data() {
     return {
       cargarLoader: false,
-      columnas: ['Id', 'Artículo']
+      columnas: [
+        { title: 'Id', width: '10%' },
+        { title: 'Descripción', width: '30%' }
+      ]
     }
   },
   computed: {
@@ -32,7 +35,6 @@ export default {
 </script>
 <template>
   <div class="contenedor row p-0 m-0">
-    <MainLoader :isLoading="cargarLoader"></MainLoader>
     <NavbarAdministracion></NavbarAdministracion>
     <div class="col mt-3">
       <TituloDeMenu titulo="Artículos"></TituloDeMenu>
