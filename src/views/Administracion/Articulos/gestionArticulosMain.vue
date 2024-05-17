@@ -34,18 +34,23 @@ export default {
 </script>
 
 <style scoped>
+.contenedor {
+  height: 100vh;
+  background-color: #b9b9b9;
+  border-color: #fff;
+}
 .router-link {
   text-decoration: none;
-  color: black;
+  color: inherit;
 }
 .menu-item {
-  font-size: 40px;
+  font-size: 50px;
   margin-left: 5%;
 }
 
 .menu-item:hover,
 .menu-item.hovered {
-  font-size: 45px;
+  font-size: 60px;
   margin-left: 10%;
   transform: scale(1.1) translateX(0);
 }

@@ -1,54 +1,354 @@
 {
   "articulos": [
-    { "id": "PUERTA_001", "descripcion": "Puertas de madera maciza" },
-    { "id": "PUERTA_002", "descripcion": "Puertas de madera contrachapada" },
-    { "id": "PUERTA_003", "descripcion": "Puertas de madera prensada" },
-    { "id": "PUERTA_004", "descripcion": "Puertas de madera reciclada" },
-    { "id": "PUERTA_005", "descripcion": "Puertas de metal" },
-    { "id": "PUERTA_006", "descripcion": "Puertas de acero inoxidable" },
-    { "id": "PUERTA_007", "descripcion": "Puertas de aluminio" },
-    { "id": "PUERTA_008", "descripcion": "Puertas de vidrio" },
-    { "id": "PUERTA_009", "descripcion": "Puertas de vidrio templado" },
-    { "id": "PUERTA_010", "descripcion": "Puertas de vidrio laminado" },
-    { "id": "PUERTA_011", "descripcion": "Puertas de vidrio esmerilado" },
-    { "id": "PUERTA_012", "descripcion": "Puertas corredizas" },
-    { "id": "PUERTA_013", "descripcion": "Puertas plegables" },
-    { "id": "PUERTA_014", "descripcion": "Puertas francesas" },
-    { "id": "PUERTA_015", "descripcion": "Puertas pivotantes" },
-    { "id": "PUERTA_016", "descripcion": "Puertas automáticas" },
-    { "id": "PUERTA_017", "descripcion": "Puertas de seguridad" },
-    { "id": "PUERTA_018", "descripcion": "Puertas cortafuegos" },
-    { "id": "PUERTA_019", "descripcion": "Puertas de garaje" },
-    { "id": "PUERTA_020", "descripcion": "Puertas enrollables" },
-    { "id": "PUERTA_021", "descripcion": "Puertas de granero" },
-    { "id": "PUERTA_022", "descripcion": "Puertas corredizas de granero" },
-    { "id": "PUERTA_023", "descripcion": "Puertas de interior" },
-    { "id": "PUERTA_024", "descripcion": "Puertas de exterior" },
-    { "id": "PUERTA_025", "descripcion": "Puertas de armario" },
-    { "id": "PUERTA_026", "descripcion": "Puertas de entrada" },
-    { "id": "PUERTA_027", "descripcion": "Puertas de patio" },
-    { "id": "PUERTA_028", "descripcion": "Puertas de balcón" },
-    { "id": "PUERTA_029", "descripcion": "Puertas de jardín" },
-    { "id": "PUERTA_030", "descripcion": "Puertas de pasillo" },
-    { "id": "PUERTA_031", "descripcion": "Puertas de cocina" },
-    { "id": "PUERTA_032", "descripcion": "Puertas de baño" },
-    { "id": "PUERTA_033", "descripcion": "Puertas de dormitorio" },
-    { "id": "PUERTA_034", "descripcion": "Puertas de oficina" },
-    { "id": "PUERTA_035", "descripcion": "Puertas de tienda" },
-    { "id": "PUERTA_036", "descripcion": "Puertas de almacén" },
-    { "id": "PUERTA_037", "descripcion": "Puertas de trastero" },
-    { "id": "PUERTA_038", "descripcion": "Puertas de sótano" },
-    { "id": "PUERTA_039", "descripcion": "Puertas de invernadero" },
-    { "id": "PUERTA_040", "descripcion": "Puertas de almacén frigorífico" },
-    { "id": "PUERTA_041", "descripcion": "Puertas de bodega" },
-    { "id": "PUERTA_042", "descripcion": "Puertas de sauna" },
-    { "id": "PUERTA_043", "descripcion": "Puertas de teatro en casa" },
-    { "id": "PUERTA_044", "descripcion": "Puertas de salón de eventos" },
-    { "id": "PUERTA_045", "descripcion": "Puertas de auditorio" },
-    { "id": "PUERTA_046", "descripcion": "Puertas de hospital" },
-    { "id": "PUERTA_047", "descripcion": "Puertas de escuela" },
-    { "id": "PUERTA_048", "descripcion": "Puertas de gimnasio" },
-    { "id": "PUERTA_049", "descripcion": "Puertas de hotel" },
-    { "id": "PUERTA_050", "descripcion": "Puertas de museo" }
+    {
+      "id": "PUERTA_001",
+      "descripcion": "Puertas de madera maciza",
+      "alto": 1900,
+      "ancho": 625,
+      "grueso": 62
+    },
+    {
+      "id": "PUERTA_002",
+      "descripcion": "Puertas de madera contrachapada",
+      "alto": 2100,
+      "ancho": 725,
+      "grueso": 64
+    },
+    {
+      "id": "PUERTA_003",
+      "descripcion": "Puertas de madera prensada",
+      "alto": 2500,
+      "ancho": 825,
+      "grueso": 66
+    },
+    {
+      "id": "PUERTA_004",
+      "descripcion": "Puertas de madera reciclada",
+      "alto": 1900,
+      "ancho": 625,
+      "grueso": 64
+    },
+    {
+      "id": "PUERTA_005",
+      "descripcion": "Puertas de metal",
+      "alto": 2100,
+      "ancho": 725,
+      "grueso": 62
+    },
+    {
+      "id": "PUERTA_006",
+      "descripcion": "Puertas de acero inoxidable",
+      "alto": 2500,
+      "ancho": 825,
+      "grueso": 64
+    },
+    {
+      "id": "PUERTA_007",
+      "descripcion": "Puertas de aluminio",
+      "alto": 1900,
+      "ancho": 625,
+      "grueso": 66
+    },
+    {
+      "id": "PUERTA_008",
+      "descripcion": "Puertas de vidrio",
+      "alto": 2100,
+      "ancho": 725,
+      "grueso": 62
+    },
+    {
+      "id": "PUERTA_009",
+      "descripcion": "Puertas de vidrio templado",
+      "alto": 2500,
+      "ancho": 825,
+      "grueso": 64
+    },
+    {
+      "id": "PUERTA_010",
+      "descripcion": "Puertas de vidrio laminado",
+      "alto": 1900,
+      "ancho": 625,
+      "grueso": 66
+    },
+    {
+      "id": "PUERTA_011",
+      "descripcion": "Puertas de vidrio esmerilado",
+      "alto": 2100,
+      "ancho": 725,
+      "grueso": 62
+    },
+    {
+      "id": "PUERTA_012",
+      "descripcion": "Puertas corredizas",
+      "alto": 2500,
+      "ancho": 825,
+      "grueso": 64
+    },
+    {
+      "id": "PUERTA_013",
+      "descripcion": "Puertas plegables",
+      "alto": 1900,
+      "ancho": 625,
+      "grueso": 62
+    },
+    {
+      "id": "PUERTA_014",
+      "descripcion": "Puertas francesas",
+      "alto": 2100,
+      "ancho": 725,
+      "grueso": 66
+    },
+    {
+      "id": "PUERTA_015",
+      "descripcion": "Puertas pivotantes",
+      "alto": 2500,
+      "ancho": 825,
+      "grueso": 62
+    },
+    {
+      "id": "PUERTA_016",
+      "descripcion": "Puertas automáticas",
+      "alto": 1900,
+      "ancho": 625,
+      "grueso": 64
+    },
+    {
+      "id": "PUERTA_017",
+      "descripcion": "Puertas de seguridad",
+      "alto": 2100,
+      "ancho": 725,
+      "grueso": 66
+    },
+    {
+      "id": "PUERTA_018",
+      "descripcion": "Puertas cortafuegos",
+      "alto": 2500,
+      "ancho": 825,
+      "grueso": 62
+    },
+    {
+      "id": "PUERTA_019",
+      "descripcion": "Puertas de garaje",
+      "alto": 1900,
+      "ancho": 625,
+      "grueso": 64
+    },
+    {
+      "id": "PUERTA_020",
+      "descripcion": "Puertas enrollables",
+      "alto": 2100,
+      "ancho": 725,
+      "grueso": 62
+    },
+    {
+      "id": "PUERTA_021",
+      "descripcion": "Puertas de granero",
+      "alto": 2500,
+      "ancho": 825,
+      "grueso": 66
+    },
+    {
+      "id": "PUERTA_022",
+      "descripcion": "Puertas corredizas de granero",
+      "alto": 1900,
+      "ancho": 625,
+      "grueso": 64
+    },
+    {
+      "id": "PUERTA_023",
+      "descripcion": "Puertas de interior",
+      "alto": 2100,
+      "ancho": 725,
+      "grueso": 62
+    },
+    {
+      "id": "PUERTA_024",
+      "descripcion": "Puertas de exterior",
+      "alto": 2500,
+      "ancho": 825,
+      "grueso": 66
+    },
+    {
+      "id": "PUERTA_025",
+      "descripcion": "Puertas de armario",
+      "alto": 1900,
+      "ancho": 625,
+      "grueso": 62
+    },
+    {
+      "id": "PUERTA_026",
+      "descripcion": "Puertas de entrada",
+      "alto": 2100,
+      "ancho": 725,
+      "grueso": 64
+    },
+    {
+      "id": "PUERTA_027",
+      "descripcion": "Puertas de patio",
+      "alto": 2500,
+      "ancho": 825,
+      "grueso": 66
+    },
+    {
+      "id": "PUERTA_028",
+      "descripcion": "Puertas de balcón",
+      "alto": 1900,
+      "ancho": 625,
+      "grueso": 62
+    },
+    {
+      "id": "PUERTA_029",
+      "descripcion": "Puertas de jardín",
+      "alto": 2100,
+      "ancho": 725,
+      "grueso": 64
+    },
+    {
+      "id": "PUERTA_030",
+      "descripcion": "Puertas de pasillo",
+      "alto": 2500,
+      "ancho": 825,
+      "grueso": 66
+    },
+    {
+      "id": "PUERTA_031",
+      "descripcion": "Puertas de cocina",
+      "alto": 1900,
+      "ancho": 625,
+      "grueso": 62
+    },
+    {
+      "id": "PUERTA_032",
+      "descripcion": "Puertas de baño",
+      "alto": 2100,
+      "ancho": 725,
+      "grueso": 64
+    },
+    {
+      "id": "PUERTA_033",
+      "descripcion": "Puertas de dormitorio",
+      "alto": 2500,
+      "ancho": 825,
+      "grueso": 66
+    },
+    {
+      "id": "PUERTA_034",
+      "descripcion": "Puertas de oficina",
+      "alto": 1900,
+      "ancho": 625,
+      "grueso": 62
+    },
+    {
+      "id": "PUERTA_035",
+      "descripcion": "Puertas de tienda",
+      "alto": 2100,
+      "ancho": 725,
+      "grueso": 64
+    },
+    {
+      "id": "PUERTA_036",
+      "descripcion": "Puertas de almacén",
+      "alto": 2500,
+      "ancho": 825,
+      "grueso": 66
+    },
+    {
+      "id": "PUERTA_037",
+      "descripcion": "Puertas de trastero",
+      "alto": 1900,
+      "ancho": 625,
+      "grueso": 62
+    },
+    {
+      "id": "PUERTA_038",
+      "descripcion": "Puertas de sótano",
+      "alto": 2100,
+      "ancho": 725,
+      "grueso": 64
+    },
+    {
+      "id": "PUERTA_039",
+      "descripcion": "Puertas de invernadero",
+      "alto": 2500,
+      "ancho": 825,
+      "grueso": 66
+    },
+    {
+      "id": "PUERTA_040",
+      "descripcion": "Puertas de almacén frigorífico",
+      "alto": 1900,
+      "ancho": 625,
+      "grueso": 62
+    },
+    {
+      "id": "PUERTA_041",
+      "descripcion": "Puertas de bodega",
+      "alto": 2100,
+      "ancho": 725,
+      "grueso": 64
+    },
+    {
+      "id": "PUERTA_042",
+      "descripcion": "Puertas de sauna",
+      "alto": 2500,
+      "ancho": 825,
+      "grueso": 66
+    },
+    {
+      "id": "PUERTA_043",
+      "descripcion": "Puertas de teatro en casa",
+      "alto": 1900,
+      "ancho": 625,
+      "grueso": 62
+    },
+    {
+      "id": "PUERTA_044",
+      "descripcion": "Puertas de salón de eventos",
+      "alto": 2100,
+      "ancho": 725,
+      "grueso": 64
+    },
+    {
+      "id": "PUERTA_045",
+      "descripcion": "Puertas de auditorio",
+      "alto": 2500,
+      "ancho": 825,
+      "grueso": 66
+    },
+    {
+      "id": "PUERTA_046",
+      "descripcion": "Puertas de hospital",
+      "alto": 1900,
+      "ancho": 625,
+      "grueso": 62
+    },
+    {
+      "id": "PUERTA_047",
+      "descripcion": "Puertas de escuela",
+      "alto": 2100,
+      "ancho": 725,
+      "grueso": 64
+    },
+    {
+      "id": "PUERTA_048",
+      "descripcion": "Puertas de gimnasio",
+      "alto": 2500,
+      "ancho": 825,
+      "grueso": 66
+    },
+    {
+      "id": "PUERTA_049",
+      "descripcion": "Puertas de hotel",
+      "alto": 1900,
+      "ancho": 625,
+      "grueso": 62
+    },
+    {
+      "id": "PUERTA_050",
+      "descripcion": "Puertas de museo",
+      "alto": 2100,
+      "ancho": 725,
+      "grueso": 64
+    }
   ]
 }

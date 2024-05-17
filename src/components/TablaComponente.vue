@@ -1,33 +1,51 @@
 <template>
   <div class="mt-3">
-    <table>
-      <thead style="background-color: #5f4522; color: white">
-        <tr>
-          <th
-            v-for="(column, index) in titulosColumna"
-            :key="index"
-            :style="{ width: column.width }"
-            class="columna"
+    <div class="table-container">
+      <table>
+        <thead style="background-color: #5f4522; color: white">
+          <tr>
+            <th
+              v-for="(column, index) in titulosColumna"
+              :key="index"
+              :style="{ width: column.width, textAlign: column.align }"
+              :class="'columna column-' + index"
+            >
+              {{ column.title }}
+            </th>
+            <th class="columna" style="width: 3%; text-align: center">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            v-for="(filaData, rowIndex) in datosPagina"
+            :key="rowIndex"
+            class="tabla-fila"
+            style="background-color: white; color: black"
           >
-            {{ column.title }}
-          </th>
-          <th class="columna" style="width: 10%">Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr
-          v-for="(filaData, rowIndex) in datosPagina"
-          :key="rowIndex"
-          class="tabla-fila"
-          style="background-color: white; color: black"
-        >
-          <td v-for="(columna, colIndex) in filaData" :key="colIndex">{{ columna }}</td>
-          <td>
-            <button @click="accionFila(filaData)">Acción</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+            <td
+              v-for="(columna, colIndex) in filaData"
+              :key="colIndex"
+              :style="{ textAlign: this.titulosColumna[getColIndex(colIndex)].align }"
+            >
+              {{ columna }}
+            </td>
+            <td class="botones-acciones">
+              <div class="d-flex justify-content-center gap-3">
+                <button class="btn btn-brown" @click="accionFila(filaData)">
+                  <i class="bi bi-eye"></i>
+                </button>
+                <button class="btn btn-warning" @click="accionFila(filaData)">
+                  <i class="bi bi-pencil"></i>
+                </button>
+                <button class="btn btn-danger" @click="accionFila(filaData)">
+                  <i class="bi bi-trash-fill"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
     <div class="pagination d-flex justify-content-center align-items-center mt-2 gap-2">
       <button @click="paginaAnterior" :disabled="paginaActual === 1">Anterior</button>
@@ -46,7 +64,7 @@ export default {
   data() {
     return {
       paginaActual: 1,
-      itemsPorPagina: 15
+      itemsPorPagina: 10
     }
   },
   computed: {
@@ -77,8 +95,13 @@ export default {
       if (window.matchMedia('(max-width: 768px)').matches) {
         this.itemsPorPagina = 5
       } else {
-        this.itemsPorPagina = 15
+        this.itemsPorPagina = 14
       }
+    },
+    getColIndex(colIndex) {
+      return this.titulosColumna.findIndex(
+        (column) => column.title === colIndex.charAt(0).toUpperCase() + colIndex.slice(1)
+      )
     }
   },
   mounted() {
@@ -92,19 +115,9 @@ export default {
 </script>
 
 <style scoped>
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: #929292;
-  font-family: 'Open Sans', sans-serif;
-}
-
-#app {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
+.btn-brown {
+  background-color: #5f4522;
+  color: white;
 }
 
 table {
@@ -112,24 +125,24 @@ table {
   border-collapse: collapse;
 }
 
-th,
 td {
   border: 1px solid black;
-  padding: 8px;
-  text-align: left;
+  padding-left: 10px;
 }
 
 th {
   background-color: #5f4522;
   color: white;
+  border: 1px solid black;
+  padding: 10px;
 }
 
 .columna {
-  width: 150px; /* Ancho predeterminado */
+  width: 150px;
 }
 
 .tabla-fila {
-  height: 90px; /* Altura fija para las filas */
+  height: 50px;
 }
 
 .pagination {
@@ -161,13 +174,25 @@ th {
   background-color: #5f4522;
 }
 
-.tabla-fila {
-  height: 90px; /* Altura fija para las filas en dispositivos móviles */
+.table-container {
+  overflow-x: auto;
+  width: 100%;
 }
 
-@media (min-width: 769px) {
+@media (max-width: 768px) {
   .tabla-fila {
-    height: 40px; /* Altura ajustada para las filas en dispositivos de escritorio */
+    min-height: 40px;
+  }
+  td {
+    border: 1px solid black;
+    padding: 10px;
+  }
+
+  th {
+    background-color: #5f4522;
+    color: white;
+    border: 1px solid black;
+    padding: 10px;
   }
 }
 </style>

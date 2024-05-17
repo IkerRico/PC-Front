@@ -15,8 +15,11 @@ export default {
     return {
       cargarLoader: false,
       columnas: [
-        { title: 'Id', width: '10%' },
-        { title: 'Descripción', width: '30%' }
+        { title: 'Id', width: '5%', align: 'center' },
+        { title: 'Descripcion', width: '30%', align: 'left' },
+        { title: 'Alto', width: '2%', align: 'center' },
+        { title: 'Ancho', width: '2%', align: 'center' },
+        { title: 'Grueso', width: '2%', align: 'center' }
       ]
     }
   },
