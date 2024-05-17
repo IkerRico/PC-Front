@@ -33,6 +33,10 @@ const router = createRouter({
       name: 'Articulos',
       component: () =>
         import('../views/Administracion/Articulos/GestionArticulos/articulosMain.vue')
+    },
+    {
+      path: '/:pathMatch(.*)',
+      redirect: '/'
     }
   ]
 })
