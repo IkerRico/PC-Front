@@ -10,32 +10,36 @@ export default {
   }
 }
 </script>
+
 <template>
-  <div class="contenedor d-flex flex-column justify-content-center">
-    <div class="title-selector row text-center m-0 p-0"></div>
-    <div class="buttons-section row text-center m-0 p-0">
+  <div class="contenedor d-flex flex-column justify-content-center align-items-center">
+    <div class="buttons-section row text-center m-0 p-0 w-100">
       <div class="button-selector col-sm-6 col-12 m-0 p-0">
-        <button type="button" class="btn btn-primary btn-lg" v-on:click="irAdministracionMenu">
+        <button
+          type="button"
+          class="btn btn-primary btn-lg w-100"
+          v-on:click="irAdministracionMenu"
+        >
           <i class="bi bi-cart"></i>
           <span>Administración</span>
         </button>
       </div>
       <div class="button-selector col-sm-6 col-12 m-0 p-0">
-        <button type="button" class="btn btn-primary btn-lg" v-on:click="irProduccionMenu">
+        <button type="button" class="btn btn-primary btn-lg w-100" v-on:click="irProduccionMenu">
           <i class="bi bi-truck"></i>
           <span>Producción</span>
         </button>
       </div>
     </div>
-    <div class="buttons-section row text-center m-0 p-0">
+    <div class="buttons-section row text-center m-0 p-0 w-100">
       <div class="button-selector col-sm-6 col-12 m-0 p-0">
-        <button type="button" class="btn btn-primary btn-lg">
+        <button type="button" class="btn btn-primary btn-lg w-100">
           <i class="bi bi-pc-display"></i>
           <span>Informatica</span>
         </button>
       </div>
-      <div class="button-selector col-sm-6 col-12col-6 m-0 p-0">
-        <button type="button" class="btn btn-primary btn-lg">
+      <div class="button-selector col-sm-6 col-12 m-0 p-0">
+        <button type="button" class="btn btn-primary btn-lg w-100">
           <i class="bi bi-credit-card-2-front-fill"></i>
           <span>Comerciales</span>
         </button>
@@ -43,17 +47,36 @@ export default {
     </div>
   </div>
 </template>
-
 <style scoped>
-.contenedor {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+html,
+body {
+  height: 100%;
   margin: 0;
+  padding: 0;
+}
+
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   background-color: #b9b9b9;
 }
 
-.buttons-section .button-selector button {
+.buttons-section {
+  width: 100%;
+}
+
+.button-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.button-selector button {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -63,13 +86,27 @@ export default {
   cursor: pointer;
 }
 
-.buttons-section .button-selector i {
+.button-selector i {
   font-size: 7rem;
   color: #5f4522;
 }
 
-.buttons-section .button-selector span {
+.button-selector span {
   font-size: 2rem;
   color: #5f4522;
+}
+
+.icon-lg {
+  font-size: 7rem; /* Tamaño de los íconos en dispositivos de escritorio */
+}
+
+@media (max-width: 768px) {
+  .button-selector i {
+    font-size: 4rem;
+  }
+
+  .button-selector span {
+    font-size: 1.5rem;
+  }
 }
 </style>

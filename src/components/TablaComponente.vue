@@ -137,6 +137,10 @@ th {
 .pagination {
   margin-top: 20px;
   text-align: center;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .pagination button {
@@ -157,5 +161,15 @@ th {
 
 .pagination button:hover:not(:disabled) {
   background-color: #5f4522;
+}
+
+.tabla-fila {
+  height: 90px; /* Altura fija para las filas en dispositivos móviles */
+}
+
+@media (min-width: 769px) {
+  .tabla-fila {
+    height: 40px; /* Altura ajustada para las filas en dispositivos de escritorio */
+  }
 }
 </style>
