@@ -55,6 +55,15 @@ body {
   padding: 0;
 }
 
+.btn-primary {
+  --bs-btn-active-bg: none;
+}
+
+.button-selector button:focus {
+  outline: 2px solid transparent; /* Cambia el color del borde de enfoque a transparente */
+  box-shadow: none; /* Elimina cualquier sombra predeterminada al enfocar */
+}
+
 .contenedor {
   display: flex;
   flex-direction: column;
@@ -84,6 +93,7 @@ body {
   border: none;
   background-color: transparent;
   cursor: pointer;
+  outline: none;
 }
 
 .button-selector i {

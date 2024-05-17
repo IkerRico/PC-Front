@@ -26,10 +26,21 @@ export default {
     })
   },
   methods: {
-    ...mapActions(articuloStore, ['obtenerTodosLosArticulos'])
+    ...mapActions(articuloStore, ['obtenerTodosLosArticulos']),
+    async cargarArticulos() {
+      try {
+        await this.obtenerTodosLosArticulos()
+      } catch (error) {
+        this.$swal({
+          icon: 'error',
+          title: 'Error',
+          text: 'Hubo un error al cargar los artículos. Por favor, inténtalo de nuevo más tarde.'
+        })
+      }
+    }
   },
   mounted() {
-    this.obtenerTodosLosArticulos()
+    this.cargarArticulos()
   }
 }
 </script>

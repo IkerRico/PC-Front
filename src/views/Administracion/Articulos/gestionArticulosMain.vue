@@ -51,5 +51,10 @@ li:hover {
   li {
     font-size: 30px; /* Tamaño de fuente para dispositivos móviles */
   }
+  li:hover {
+    font-size: 35px;
+    margin-left: 10%;
+    transform: scale(1);
+  }
 }
 </style>

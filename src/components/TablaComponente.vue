@@ -71,9 +71,7 @@ export default {
       }
     },
     accionFila(filaData) {
-      // Lógica para la acción en la fila específica
       console.log(`Acción en fila ${filaData.id}`)
-      // Aquí puedes trabajar con toda la fila de datos
     },
     ajustarItemsPorPagina() {
       if (window.matchMedia('(max-width: 768px)').matches) {
