@@ -1,13 +1,3 @@
-<script>
-import NavbarAdministracion from '@/components/NavbarAdministracion.vue'
-import TituloDeMenu from '@/components/TituloDeMenu.vue'
-export default {
-  components: {
-    NavbarAdministracion,
-    TituloDeMenu
-  }
-}
-</script>
 <template>
   <div class="contenedor row p-0 m-0">
     <NavbarAdministracion></NavbarAdministracion>
@@ -16,7 +6,7 @@ export default {
       <div class="mt-3">
         <ol>
           <router-link to="/GestionArticulos/Articulos" class="router-link">
-            <li>Articulos</li>
+            <li ref="menuItem" class="menu-item">Articulos</li>
           </router-link>
         </ol>
       </div>
@@ -24,37 +14,52 @@ export default {
   </div>
 </template>
 
-<style scoped>
-.contenedor {
-  height: 100vh;
-  background-color: #b9b9b9;
-  border-color: #fff;
-}
+<script>
+import NavbarAdministracion from '@/components/NavbarAdministracion.vue'
+import TituloDeMenu from '@/components/TituloDeMenu.vue'
 
+export default {
+  components: {
+    NavbarAdministracion,
+    TituloDeMenu
+  },
+  mounted() {
+    this.$refs.menuItem.classList.remove('hovered')
+  },
+  beforeRouteUpdate(to, from, next) {
+    this.$refs.menuItem.classList.remove('hovered')
+    next()
+  }
+}
+</script>
+
+<style scoped>
 .router-link {
   text-decoration: none;
-  color: inherit;
+  color: black;
 }
-
-li {
+.menu-item {
   font-size: 40px;
   margin-left: 5%;
 }
 
-li:hover {
+.menu-item:hover,
+.menu-item.hovered {
   font-size: 45px;
   margin-left: 10%;
-  transform: scale(1);
+  transform: scale(1.1) translateX(0);
 }
 
+/* Media queries y estilos para dispositivos móviles */
 @media (max-width: 768px) {
-  li {
-    font-size: 30px; /* Tamaño de fuente para dispositivos móviles */
+  .menu-item {
+    font-size: 30px;
   }
-  li:hover {
+  .menu-item:hover,
+  .menu-item.hovered {
     font-size: 35px;
     margin-left: 10%;
-    transform: scale(1);
+    transform: scale(1.1) translateX(0);
   }
 }
 </style>
