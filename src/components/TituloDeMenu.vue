@@ -6,6 +6,7 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
   props: {
@@ -13,6 +14,7 @@ export default {
   }
 }
 </script>
+
 <style scoped>
 hr {
   margin: 0;
@@ -20,5 +22,13 @@ hr {
 
 h1 {
   font-size: 50px;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 40px; /* Tamaño de fuente para dispositivos móviles */
+    text-align: center; /* Centra el texto */
+  }
 }
 </style>

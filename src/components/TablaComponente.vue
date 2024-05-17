@@ -18,6 +18,7 @@
         <tr
           v-for="(filaData, rowIndex) in datosPagina"
           :key="rowIndex"
+          class="tabla-fila"
           style="background-color: white; color: black"
         >
           <td v-for="(columna, colIndex) in filaData" :key="colIndex">{{ columna }}</td>
@@ -73,12 +74,41 @@ export default {
       // Lógica para la acción en la fila específica
       console.log(`Acción en fila ${filaData.id}`)
       // Aquí puedes trabajar con toda la fila de datos
+    },
+    ajustarItemsPorPagina() {
+      if (window.matchMedia('(max-width: 768px)').matches) {
+        this.itemsPorPagina = 5
+      } else {
+        this.itemsPorPagina = 15
+      }
     }
+  },
+  mounted() {
+    this.ajustarItemsPorPagina()
+    window.addEventListener('resize', this.ajustarItemsPorPagina)
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.ajustarItemsPorPagina)
   }
 }
 </script>
 
 <style scoped>
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #929292;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#app {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -100,6 +130,10 @@ th {
   width: 150px; /* Ancho predeterminado */
 }
 
+.tabla-fila {
+  height: 90px; /* Altura fija para las filas */
+}
+
 .pagination {
   margin-top: 20px;
   text-align: center;
@@ -108,7 +142,7 @@ th {
 .pagination button {
   margin: 0 5px;
   padding: 5px 10px;
-  background-color: #4caf50;
+  background-color: #5f4522;
   color: white;
   border: none;
   border-radius: 3px;
@@ -122,6 +156,6 @@ th {
 }
 
 .pagination button:hover:not(:disabled) {
-  background-color: #45a049;
+  background-color: #5f4522;
 }
 </style>

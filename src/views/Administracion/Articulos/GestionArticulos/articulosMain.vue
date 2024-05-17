@@ -34,7 +34,7 @@ export default {
 }
 </script>
 <template>
-  <div class="contenedor row p-0 m-0">
+  <div class="contenedor row p-0 m-0 h-100">
     <NavbarAdministracion></NavbarAdministracion>
     <div class="col mt-3">
       <TituloDeMenu titulo="Artículos"></TituloDeMenu>
@@ -48,7 +48,6 @@ export default {
 
 <style scoped>
 .contenedor {
-  height: 100vh;
   background-color: #b9b9b9;
   border-color: #fff;
 }

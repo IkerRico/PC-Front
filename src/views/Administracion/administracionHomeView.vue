@@ -43,13 +43,19 @@ export default {
 }
 
 li {
-  font-size: 40px;
+  font-size: 50px;
   margin-left: 5%;
 }
 
 li:hover {
-  font-size: 45px;
+  font-size: 60px;
   margin-left: 10%;
   transform: scale(1);
+}
+
+@media (max-width: 768px) {
+  li {
+    font-size: 25px; /* Tamaño de fuente para dispositivos móviles */
+  }
 }
 </style>
