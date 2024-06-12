@@ -31,13 +31,13 @@
             </td>
             <td class="botones-acciones">
               <div class="d-flex justify-content-center gap-3">
-                <button class="btn btn-brown" @click="accionFila(filaData)">
+                <button class="btn btn-brown" @click="emitirAccion('ver', filaData)">
                   <i class="bi bi-eye"></i>
                 </button>
-                <button class="btn btn-warning" @click="accionFila(filaData)">
+                <button class="btn btn-warning" @click="emitirAccion('editar', filaData)">
                   <i class="bi bi-pencil"></i>
                 </button>
-                <button class="btn btn-danger" @click="accionFila(filaData)">
+                <button class="btn btn-danger" @click="emitirAccion('eliminar', filaData)">
                   <i class="bi bi-trash-fill"></i>
                 </button>
               </div>
@@ -78,6 +78,9 @@ export default {
     }
   },
   methods: {
+    emitirAccion(accion, filaData) {
+      this.$emit('accion', { accion, filaData })
+    },
     paginaAnterior() {
       if (this.paginaActual > 1) {
         this.paginaActual--

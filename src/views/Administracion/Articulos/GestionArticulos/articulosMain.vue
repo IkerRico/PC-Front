@@ -40,6 +40,18 @@ export default {
           text: 'Hubo un error al cargar los artículos. Por favor, inténtalo de nuevo más tarde.'
         })
       }
+    },
+    manejarAccion({ accion, filaData }) {
+      console.log('Acción:', accion)
+      console.log('Datos de la fila:', JSON.stringify(filaData, null, 2))
+
+      if (accion === 'ver') {
+        this.$router.push(`/GestionArticulos/Articulos/${filaData.id}/ver`)
+      } else if (accion === 'editar') {
+        // Maneja la editar del artículo aquí
+      } else if (accion === 'eliminar') {
+        // Maneja la eliminación del artículo aquí
+      }
     }
   },
   mounted() {
@@ -55,6 +67,7 @@ export default {
       <TablaComponente
         :titulosColumna="this.columnas"
         :informacionTabla="this.articulos"
+        @accion="manejarAccion"
       ></TablaComponente>
     </div>
   </div>

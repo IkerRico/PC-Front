@@ -33,6 +33,12 @@ const router = createRouter({
       name: 'Articulos',
       component: () =>
         import('../views/Administracion/Articulos/GestionArticulos/articulosMain.vue')
+    },
+    {
+      path: '/GestionArticulos/Articulos/:id/ver',
+      name: 'Ver Articulos',
+      props: true,
+      component: () => import('../views/Administracion/Articulos/GestionArticulos/verArticulo.vue')
     }
   ]
 })
