@@ -25,20 +25,23 @@ export default {
   },
   computed: {
     ...mapState(articuloStore, {
-      articulos: 'articulos'
+      articulos: 'articulos',
+      datosCargados: 'datosCargados'
     })
   },
   methods: {
     ...mapActions(articuloStore, ['obtenerTodosLosArticulos']),
     async cargarArticulos() {
-      try {
-        await this.obtenerTodosLosArticulos()
-      } catch (error) {
-        this.$swal({
-          icon: 'error',
-          title: 'Error',
-          text: 'Hubo un error al cargar los artículos. Por favor, inténtalo de nuevo más tarde.'
-        })
+      if (!this.datosCargados) {
+        try {
+          await this.obtenerTodosLosArticulos()
+        } catch (error) {
+          this.$swal({
+            icon: 'error',
+            title: 'Error',
+            text: 'Hubo un error al cargar los artículos. Por favor, inténtalo de nuevo más tarde.'
+          })
+        }
       }
     },
     manejarAccion({ accion, filaData }) {
