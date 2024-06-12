@@ -81,20 +81,4 @@ export default {
   background-color: #b9b9b9;
   border-color: #fff;
 }
-
-.router-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-li {
-  font-size: 40px;
-  margin-left: 5%;
-}
-
-li:hover {
-  font-size: 45px;
-  margin-left: 10%;
-  transform: scale(1);
-}
 </style>
