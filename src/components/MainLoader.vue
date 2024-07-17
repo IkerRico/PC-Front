@@ -1,7 +1,7 @@
 <template>
   <div class="overlay" v-show="chargeLoader">
     <div class="loader">
-      <VueSpinnerBars size="80" color="#5f4522" />
+      <VueSpinnerBars size="80" color="#213b81" />
     </div>
   </div>
 </template>

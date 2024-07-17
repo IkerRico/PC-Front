@@ -9,18 +9,18 @@
   </div>
 </template>
 <script>
-import BotonMenuPrincipal from './BotonMenuPrincipal.vue'
-import BotonMenuVolverAtras from './BotonMenuVolverAtras.vue'
+import BotonMenuPrincipal from "./BotonMenuPrincipal.vue";
+import BotonMenuVolverAtras from "./BotonMenuVolverAtras.vue";
 export default {
   components: {
     BotonMenuPrincipal,
-    BotonMenuVolverAtras
-  }
-}
+    BotonMenuVolverAtras,
+  },
+};
 </script>
 <style scoped>
 .nav-bar {
-  background-color: #5f4522;
+  background-color: #213b81;
   height: 100vh;
   width: 8%;
   display: flex;
@@ -29,12 +29,8 @@ export default {
   margin: 0;
 }
 
-.nav-bar-element {
-  height: 10%;
-}
-
 .nav-bar-element:hover {
-  background-color: #523919;
+  background-color: #133080;
   width: 100%;
 }
 </style>

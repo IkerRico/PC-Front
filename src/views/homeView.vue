@@ -98,12 +98,12 @@ body {
 
 .button-selector i {
   font-size: 7rem;
-  color: #5f4522;
+  color: #213b81;
 }
 
 .button-selector span {
   font-size: 2rem;
-  color: #5f4522;
+  color: #213b81;
 }
 
 .icon-lg {
