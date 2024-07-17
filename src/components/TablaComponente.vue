@@ -37,7 +37,10 @@
                 <button class="btn btn-warning" @click="emitirAccion('editar', filaData)">
                   <i class="bi bi-pencil"></i>
                 </button>
-                <button class="btn btn-danger" @click="emitirAccion('eliminar', filaData)">
+                <button
+                  class="btn btn-danger"
+                  @click="emitirAccion('eliminar', filaData)"
+                >
                   <i class="bi bi-trash-fill"></i>
                 </button>
               </div>
@@ -50,7 +53,9 @@
     <div class="pagination d-flex justify-content-center align-items-center mt-2 gap-2">
       <button @click="paginaAnterior" :disabled="paginaActual === 1">Anterior</button>
       <span>{{ paginaActual }}</span>
-      <button @click="paginaSiguiente" :disabled="paginaActual === totalPaginas">Siguiente</button>
+      <button @click="paginaSiguiente" :disabled="paginaActual === totalPaginas">
+        Siguiente
+      </button>
     </div>
   </div>
 </template>
@@ -59,62 +64,62 @@
 export default {
   props: {
     titulosColumna: Array,
-    informacionTabla: Array
+    informacionTabla: Array,
   },
   data() {
     return {
       paginaActual: 1,
-      itemsPorPagina: 10
-    }
+      itemsPorPagina: 10,
+    };
   },
   computed: {
     totalPaginas() {
-      return Math.ceil(this.informacionTabla.length / this.itemsPorPagina)
+      return Math.ceil(this.informacionTabla.length / this.itemsPorPagina);
     },
     datosPagina() {
-      const inicio = (this.paginaActual - 1) * this.itemsPorPagina
-      const fin = this.paginaActual * this.itemsPorPagina
-      return this.informacionTabla.slice(inicio, fin)
-    }
+      const inicio = (this.paginaActual - 1) * this.itemsPorPagina;
+      const fin = this.paginaActual * this.itemsPorPagina;
+      return this.informacionTabla.slice(inicio, fin);
+    },
   },
   methods: {
     emitirAccion(accion, filaData) {
-      this.$emit('accion', { accion, filaData })
+      this.$emit("accion", { accion, filaData });
     },
     paginaAnterior() {
       if (this.paginaActual > 1) {
-        this.paginaActual--
+        this.paginaActual--;
       }
     },
     paginaSiguiente() {
       if (this.paginaActual < this.totalPaginas) {
-        this.paginaActual++
+        this.paginaActual++;
       }
     },
     accionFila(filaData) {
-      console.log(`Acción en fila ${filaData.id}`)
+      console.log(`Acción en fila ${filaData.id}`);
     },
     ajustarItemsPorPagina() {
-      if (window.matchMedia('(max-width: 768px)').matches) {
-        this.itemsPorPagina = 5
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        this.itemsPorPagina = 5;
       } else {
-        this.itemsPorPagina = 14
+        this.itemsPorPagina = 14;
       }
     },
     getColIndex(colIndex) {
       return this.titulosColumna.findIndex(
-        (column) => column.title === colIndex.charAt(0).toUpperCase() + colIndex.slice(1)
-      )
-    }
+        (column) => column.title.toLowerCase() === colIndex
+      );
+    },
   },
   mounted() {
-    this.ajustarItemsPorPagina()
-    window.addEventListener('resize', this.ajustarItemsPorPagina)
+    this.ajustarItemsPorPagina();
+    window.addEventListener("resize", this.ajustarItemsPorPagina);
   },
   beforeUnmount() {
-    window.removeEventListener('resize', this.ajustarItemsPorPagina)
-  }
-}
+    window.removeEventListener("resize", this.ajustarItemsPorPagina);
+  },
+};
 </script>
 
 <style scoped>

@@ -39,6 +39,23 @@ const router = createRouter({
       name: 'Ver Articulos',
       props: true,
       component: () => import('../views/Administracion/Articulos/GestionArticulos/verArticulo.vue')
+    },
+    {
+      path: '/GestionArticulos/ComposicionArticulos',
+      name: 'Composicion Articulos',
+      component: () => import('../views/Administracion/Articulos/composicionArticulosMain.vue')
+    },
+    {
+      path: '/GestionArticulos/ComposicionArticulos/Maderas',
+      name: 'Maderas',
+      component: () =>
+        import('../views/Administracion/Articulos/ComposicionDeArticulos/Maderas/maderasMain.vue')
+    },
+    {
+      path: '/GestionArticulos/ComposicionArticulos/Maderas/:id/ver',
+      name: 'Ver Madera',
+      component: () =>
+        import('../views/Administracion/Articulos/ComposicionDeArticulos/Maderas/verMadera.vue')
     }
   ]
 })

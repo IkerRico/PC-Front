@@ -350,5 +350,35 @@
       "ancho": 725,
       "grueso": 64
     }
+  ],
+  "maderas": [
+    {
+      "id": "rob",
+      "nombre": "Roble"
+    },
+    {
+      "id": "cao",
+      "nombre": "Caoba"
+    },
+    {
+      "id": "nog",
+      "nombre": "Nogal"
+    },
+    {
+      "id": "pin",
+      "nombre": "Pino"
+    },
+    {
+      "id": "cer",
+      "nombre": "Cerezo"
+    },
+    {
+      "id": "abe",
+      "nombre": "Abedul"
+    },
+    {
+      "id": "ced",
+      "nombre": "Cedro"
+    }
   ]
 }

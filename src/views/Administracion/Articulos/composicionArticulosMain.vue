@@ -2,14 +2,14 @@
   <div class="contenedor row p-0 m-0">
     <NavbarAdministracion></NavbarAdministracion>
     <div class="col mt-3">
-      <TituloDeMenu titulo="Gestión Artículos"></TituloDeMenu>
+      <TituloDeMenu titulo="Composición Artículos"></TituloDeMenu>
       <div class="mt-3">
         <ol>
-          <router-link to="/GestionArticulos/Articulos" class="router-link">
-            <li ref="menuItem" class="menu-item">Articulos</li>
-          </router-link>
-          <router-link to="/GestionArticulos/ComposicionArticulos" class="router-link">
-            <li ref="menuItem" class="menu-item">Composicion de articulos</li>
+          <router-link
+            to="/GestionArticulos/ComposicionArticulos/Maderas"
+            class="router-link"
+          >
+            <li ref="menuItem" class="menu-item">Maderas</li>
           </router-link>
         </ol>
       </div>

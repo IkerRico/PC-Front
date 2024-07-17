@@ -4,7 +4,7 @@ import TituloDeMenu from "@/components/TituloDeMenu.vue";
 
 import { mapActions, mapState } from "pinia";
 
-import { articuloStore } from "@/stores/ArticulosStore.js";
+import { maderasStore } from "@/stores/MaderasStore.js";
 
 export default {
   components: {
@@ -16,25 +16,22 @@ export default {
       cargarLoader: false,
       columnas: [
         { title: "Id", width: "5%", align: "center" },
-        { title: "Descripcion", width: "30%", align: "left" },
-        { title: "Alto", width: "2%", align: "center" },
-        { title: "Ancho", width: "2%", align: "center" },
-        { title: "Grueso", width: "2%", align: "center" },
+        { title: "Nombre", width: "50%", align: "left" },
       ],
     };
   },
   computed: {
-    ...mapState(articuloStore, {
-      articulos: "articulos",
+    ...mapState(maderasStore, {
+      maderas: "maderas",
       datosCargados: "datosCargados",
     }),
   },
   methods: {
-    ...mapActions(articuloStore, ["obtenerTodosLosArticulos"]),
-    async cargarArticulos() {
+    ...mapActions(maderasStore, ["obtenerTodasLasMaderas"]),
+    async cargarMaderas() {
       if (!this.datosCargados) {
         try {
-          await this.obtenerTodosLosArticulos();
+          await this.obtenerTodasLasMaderas();
         } catch (error) {
           this.$swal({
             icon: "error",
@@ -47,7 +44,9 @@ export default {
     },
     manejarAccion({ accion, filaData }) {
       if (accion === "ver") {
-        this.$router.push(`/GestionArticulos/Articulos/${filaData.id}/ver`);
+        this.$router.push(
+          `/GestionArticulos/ComposicionArticulos/Maderas/${filaData.id}/ver`
+        );
       } else if (accion === "editar") {
         // Maneja la editar del artículo aquí
       } else if (accion === "eliminar") {
@@ -56,7 +55,7 @@ export default {
     },
   },
   mounted() {
-    this.cargarArticulos();
+    this.cargarMaderas();
   },
 };
 </script>
@@ -64,10 +63,10 @@ export default {
   <div class="contenedor row p-0 m-0 h-100">
     <NavbarAdministracion></NavbarAdministracion>
     <div class="col mt-3">
-      <TituloDeMenu titulo="Artículos"></TituloDeMenu>
+      <TituloDeMenu titulo="Maderas"></TituloDeMenu>
       <TablaComponente
         :titulosColumna="this.columnas"
-        :informacionTabla="this.articulos"
+        :informacionTabla="this.maderas"
         @accion="manejarAccion"
       ></TablaComponente>
     </div>
