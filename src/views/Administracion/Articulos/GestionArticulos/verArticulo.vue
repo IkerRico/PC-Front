@@ -1,7 +1,13 @@
 <script>
+import { articuloStore } from '@/stores/ArticulosStore.js'
+import { mapActions } from 'pinia'
+
 export default {
   props: {
     id: String
+  },
+  methods: {
+    ...mapActions(articuloStore, ['obtenerTodosLosArticulos'])
   }
 }
 </script>

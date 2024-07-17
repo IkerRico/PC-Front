@@ -16,6 +16,9 @@ export const articuloStore = defineStore('articuloStore', {
       this.datosCargados = true
       const response = await axios.get(SERVER + '/articulos')
       this.articulos = response.data
+    },
+    obtenerArticuloPorCodigo(id) {
+      return this.articulos.find((articulo) => articulo.id == id)
     }
   }
 })

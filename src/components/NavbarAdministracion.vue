@@ -3,13 +3,18 @@
     <div class="nav-bar-element">
       <boton-menu-principal></boton-menu-principal>
     </div>
+    <div class="nav-bar-element">
+      <boton-menu-volver-atras></boton-menu-volver-atras>
+    </div>
   </div>
 </template>
 <script>
 import BotonMenuPrincipal from './BotonMenuPrincipal.vue'
+import BotonMenuVolverAtras from './BotonMenuVolverAtras.vue'
 export default {
   components: {
-    BotonMenuPrincipal
+    BotonMenuPrincipal,
+    BotonMenuVolverAtras
   }
 }
 </script>
