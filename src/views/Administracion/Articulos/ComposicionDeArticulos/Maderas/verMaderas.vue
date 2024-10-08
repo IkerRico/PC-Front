@@ -11,5 +11,5 @@ export default {
   }
 }
 </script>
-<template><h1>Articulo X</h1></template>
+<template><h1>Madera X</h1></template>
 <style scoped></style>

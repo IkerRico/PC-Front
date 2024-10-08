@@ -5,7 +5,7 @@
       <TituloDeMenu titulo="Gestión Artículos"></TituloDeMenu>
       <div class="mt-3">
         <ol>
-          <router-link to="/GestionArticulos/Articulos" class="router-link">
+          <router-link to="" class="router-link">
             <li ref="menuItem" class="menu-item">Articulos</li>
           </router-link>
           <router-link to="/GestionArticulos/ComposicionArticulos" class="router-link">

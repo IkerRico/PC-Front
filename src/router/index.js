@@ -29,18 +29,6 @@ const router = createRouter({
       component: () => import('../views/Administracion/Articulos/gestionArticulosMain.vue')
     },
     {
-      path: '/GestionArticulos/Articulos',
-      name: 'Articulos',
-      component: () =>
-        import('../views/Administracion/Articulos/GestionArticulos/articulosMain.vue')
-    },
-    {
-      path: '/GestionArticulos/Articulos/:id/ver',
-      name: 'Ver Articulos',
-      props: true,
-      component: () => import('../views/Administracion/Articulos/GestionArticulos/verArticulo.vue')
-    },
-    {
       path: '/GestionArticulos/ComposicionArticulos',
       name: 'Composicion Articulos',
       component: () => import('../views/Administracion/Articulos/composicionArticulosMain.vue')
@@ -55,7 +43,7 @@ const router = createRouter({
       path: '/GestionArticulos/ComposicionArticulos/Maderas/:id/ver',
       name: 'Ver Madera',
       component: () =>
-        import('../views/Administracion/Articulos/ComposicionDeArticulos/Maderas/verMadera.vue')
+        import('../views/Administracion/Articulos/ComposicionDeArticulos/Maderas/verMaderas.vue')
     }
   ]
 })
