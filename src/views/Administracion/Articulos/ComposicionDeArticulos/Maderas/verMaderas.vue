@@ -1,5 +1,5 @@
 <script>
-import { articuloStore } from '@/stores/ArticulosStore.js'
+import { maderasStore } from "@/stores/MaderasStore.js";
 import { mapActions } from 'pinia'
 
 export default {
@@ -7,7 +7,7 @@ export default {
     id: String
   },
   methods: {
-    ...mapActions(articuloStore, ['obtenerTodosLosArticulos'])
+    ...mapActions(maderasStore, ['obtenerTodosLosArticulos'])
   }
 }
 </script>

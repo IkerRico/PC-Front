@@ -6,7 +6,6 @@ import router from './router'
 
 import { VueSpinnersPlugin } from 'vue3-spinners'
 
-import MainLoader from './components/MainLoader.vue'
 import TablaComponente from './components/TablaComponente.vue'
 
 import VueSweetalert2 from 'vue-sweetalert2'
@@ -19,7 +18,6 @@ app.use(router)
 app.use(VueSpinnersPlugin)
 app.use(VueSweetalert2)
 
-app.component('MainLoader', MainLoader)
 app.component('TablaComponente', TablaComponente)
 
 app.mount('#app')

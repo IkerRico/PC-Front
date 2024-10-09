@@ -13,9 +13,11 @@ export const maderasStore = defineStore('maderasStore', {
   }),
   actions: {
     async obtenerTodasLasMaderas() {
-      this.datosCargados = true
-      const response = await axios.get(SERVER + '/maderas')
-      this.maderas = response.data
+      setTimeout(async () => {
+        this.datosCargados = true
+        const response = await axios.get(SERVER + '/maderas')
+        this.maderas = response.data
+      }, "10000");
     },
     obtenerMaderaPorCodigo(id) {
       return this.maderas.find((madera) => madera.id == id)
