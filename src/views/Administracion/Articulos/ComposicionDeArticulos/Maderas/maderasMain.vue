@@ -6,16 +6,19 @@ import { mapActions, mapState } from "pinia";
 
 import { maderasStore } from "@/stores/MaderasStore.js";
 
+import MainLoader from "@/components/MainLoader.vue";
+
 export default {
   components: {
     NavbarAdministracion,
     TituloDeMenu,
+    MainLoader
   },
   data() {
     return {
-      cargarLoader: false,
+      cargarLoader: true,
       columnas: [
-        { title: "id", width: "5%", align: "center" },
+        { title: "id", width: "2%", align: "center" },
         { title: "nombre", width: "30%", align: "left" }
       ],
     };
@@ -23,13 +26,12 @@ export default {
   computed: {
     ...mapState(maderasStore, {
       maderas: "maderas",
-      datosCargados: "datosCargados",
     }),
   },
   methods: {
     ...mapActions(maderasStore, ["obtenerTodasLasMaderas"]),
     async cargarArticulos() {
-      if (!this.datosCargados) {
+      this.cargarLoader = true;
         try {
           await this.obtenerTodasLasMaderas();
         } catch (error) {
@@ -39,8 +41,9 @@ export default {
             text:
               "Hubo un error al cargar los artículos. Por favor, inténtalo de nuevo más tarde.",
           });
+        } finally {
+          this.cargarLoader = false;
         }
-      }
     },
     manejarAccion({ accion, filaData }) {
       if (accion === "ver") {
@@ -62,7 +65,9 @@ export default {
     <NavbarAdministracion></NavbarAdministracion>
     <div class="col mt-3">
       <TituloDeMenu titulo="Artículos"></TituloDeMenu>
+      <MainLoader v-show="this.cargarLoader"></MainLoader>
       <TablaComponente
+        v-show="!cargarLoader"
         :titulosColumna="this.columnas"
         :informacionTabla="this.maderas"
         @accion="manejarAccion"
