@@ -15,7 +15,7 @@ export default {
 </script>
 <style scoped>
 .nav-bar {
-  background-color: #213b81;
+  background-color: #3a64d6;
   height: 100vh;
   width: 8%;
   display: flex;
@@ -29,7 +29,7 @@ export default {
 }
 
 .nav-bar-element:hover {
-  background-color: #133080;
+  background-color: #3457b8;
   width: 100%;
 }
 </style>

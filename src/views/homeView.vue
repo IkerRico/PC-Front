@@ -70,7 +70,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #b9b9b9;
+  background-color: white;
 }
 
 .buttons-section {
@@ -98,12 +98,12 @@ body {
 
 .button-selector i {
   font-size: 7rem;
-  color: #213b81;
+  color: #3a64d6;
 }
 
 .button-selector span {
   font-size: 2rem;
-  color: #213b81;
+  color: #3a64d6;
 }
 
 .icon-lg {

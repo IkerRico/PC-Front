@@ -9,14 +9,16 @@ export const maderasStore = defineStore('maderasStore', {
       { id: 'rob', nombre: 'roble' },
       { id: 'cao', nombre: 'caoba' }
     ],
+    madera: ""
   }),
   actions: {
     async obtenerTodasLasMaderas() {
         const response = await axios.get(SERVER + '/maderas')
         this.maderas = response.data
     },
-    obtenerMaderaPorCodigo(id) {
-      return this.maderas.find((madera) => madera.id == id)
+    async obtenerMaderaPorCodigo(id) {
+      const response = await axios.get(SERVER + '/maderas/' + id)
+      this.madera = response.data
     }
   }
 })

@@ -33,7 +33,7 @@ export default {
 <style scoped>
 .contenedor {
   height: 100vh;
-  background-color: #b9b9b9;
+  background-color: white;
   border-color: #fff;
 }
 

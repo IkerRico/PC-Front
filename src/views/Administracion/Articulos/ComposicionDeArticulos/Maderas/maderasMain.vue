@@ -78,7 +78,7 @@ export default {
 
 <style scoped>
 .contenedor {
-  background-color: #b9b9b9;
+  background-color: white;
   border-color: #fff;
 }
 </style>
