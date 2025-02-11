@@ -23,11 +23,11 @@
             style="background-color: white; color: black"
           >
             <td
-              v-for="(columna, colIndex) in filaData"
+              v-for="(columna, colIndex) in titulosColumna"
               :key="colIndex"
-              :style="{ textAlign: this.titulosColumna[getColIndex(colIndex)].align }"
+              :style="{ textAlign: columna.align }"
             >
-              {{ columna }}
+              {{ filaData[columna.title] || '-' }}
             </td>
             <td class="botones-acciones">
               <div class="d-flex justify-content-center gap-3">

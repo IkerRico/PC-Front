@@ -19,7 +19,9 @@ export default {
       cargarLoader: true,
       columnas: [
         { title: "id", width: "2%", align: "center" },
-        { title: "nombre", width: "30%", align: "left" }
+        { title: "nombre", width: "30%", align: "left" },
+        { title: "nombreLargo", width: "30%", align: "left" },
+        { title: "activo", width: "10%", align: "center" }
       ],
     };
   },
