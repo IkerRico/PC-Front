@@ -18,7 +18,7 @@ export default {
     return {
       cargarLoader: true,
       columnas: [
-        { id: "id", titulo: "ID", width: "2%", align: "center" },
+        { id: "id", titulo: "ID", width: "4%", align: "center" },
         { id: "nombre", titulo: "Nombre", width: "30%", align: "left" },
         { id: "nombreLargo", titulo: "Nombre Largo", width: "30%", align: "left" },
         { id: "descatalogado", titulo: "Descatalogado", width: "10%", align: "center" }
