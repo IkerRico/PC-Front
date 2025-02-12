@@ -10,7 +10,7 @@
               :style="{ width: column.width, textAlign: column.align }"
               :class="'columna column-' + index"
             >
-              {{ column.title }}
+              {{ column.titulo }}
             </th>
             <th class="columna" style="width: 3%; text-align: center">Acciones</th>
           </tr>
@@ -27,7 +27,7 @@
               :key="colIndex"
               :style="{ textAlign: columna.align }"
             >
-              {{ filaData[columna.title] || '-' }}
+              {{ filaData[columna.id] || '-' }}
             </td>
             <td class="botones-acciones">
               <div class="d-flex justify-content-center gap-3">
@@ -102,7 +102,7 @@ export default {
       }
     },
     getColIndex(colIndex) {
-      return this.titulosColumna.findIndex((column) => column.title.toLowerCase() === colIndex)
+      return this.titulosColumna.findIndex((column) => column.id.toLowerCase() === colIndex)
     }
   },
   mounted() {

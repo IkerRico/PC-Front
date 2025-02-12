@@ -18,10 +18,10 @@ export default {
     return {
       cargarLoader: true,
       columnas: [
-        { title: "id", width: "2%", align: "center" },
-        { title: "nombre", width: "30%", align: "left" },
-        { title: "nombreLargo", width: "30%", align: "left" },
-        { title: "activo", width: "10%", align: "center" }
+        { id: "id", titulo: "ID", width: "2%", align: "center" },
+        { id: "nombre", titulo: "Nombre", width: "30%", align: "left" },
+        { id: "nombreLargo", titulo: "Nombre Largo", width: "30%", align: "left" },
+        { id: "descatalogado", titulo: "Descatalogado", width: "10%", align: "center" }
       ],
     };
   },
@@ -66,7 +66,7 @@ export default {
   <div class="contenedor row p-0 m-0 h-100">
     <NavbarAdministracion></NavbarAdministracion>
     <div class="col mt-3">
-      <TituloDeMenu titulo="Artículos"></TituloDeMenu>
+      <TituloDeMenu titulo="Maderas"></TituloDeMenu>
       <MainLoader v-show="this.cargarLoader"></MainLoader>
       <TablaComponente
         v-show="!cargarLoader"

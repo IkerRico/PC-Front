@@ -62,7 +62,7 @@ watch: {
       <div class="campos-principales row mt-2">
         <div class="col-2 mb-1 d-flex align-items-center">
           <label for="id" class="col-form-label me-2">ID:</label>
-          <input class="form-control input-equal" id="id" type="text" placeholder="ID" v-model="this.madera.id">
+          <input class="form-control input-equal" id="id" type="text" placeholder="ID" v-model="this.madera.id" readonly>
         </div>
         <div class="col-4 mb-1 d-flex align-items-center">
           <label for="nombre" class="col-form-label me-2">Nombre:</label>
