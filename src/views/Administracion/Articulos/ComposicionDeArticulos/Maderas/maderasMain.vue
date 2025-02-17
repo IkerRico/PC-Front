@@ -51,7 +51,7 @@ export default {
       if (accion === "ver") {
         this.$router.push(`/GestionArticulos/ComposicionArticulos/Maderas/${filaData.id}/ver`);
       } else if (accion === "editar") {
-        // Maneja la editar del artículo aquí
+        this.$router.push(`/GestionArticulos/ComposicionArticulos/Maderas/${filaData.id}/editar`);
       } else if (accion === "eliminar") {
         // Maneja la eliminación del artículo aquí
       }

@@ -19,6 +19,10 @@ export const maderasStore = defineStore('maderasStore', {
     async obtenerMaderaPorCodigo(id) {
       const response = await axios.get(SERVER + '/maderas/' + id)
       this.madera = response.data
+    },
+    async actualizarMaderaPorCodigo(madera) {
+      const response = await axios.put(SERVER + '/maderas/' + this.madera.id, madera)
+      this.madera = response.data
     }
   }
 })

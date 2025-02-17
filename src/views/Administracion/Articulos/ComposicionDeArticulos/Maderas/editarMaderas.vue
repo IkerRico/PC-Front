@@ -25,7 +25,36 @@ export default {
     }
   },
   methods: {
-    ...mapActions(maderasStore, ['obtenerMaderaPorCodigo'])
+    ...mapActions(maderasStore, ['obtenerMaderaPorCodigo', 'actualizarMaderaPorCodigo']),
+    async aceptarFormulario() {
+      // Activar el loader antes de hacer la solicitud
+      this.cargarLoader = true
+      try {
+        // Actualizar la madera
+        await this.actualizarMaderaPorCodigo(this.madera)
+
+        // Si la actualización es exitosa, mostrar mensaje de éxito
+        this.$swal({
+          icon: 'success',
+          title: 'Actualización exitosa',
+          text: 'La madera se ha actualizado correctamente.'
+        })
+      } catch (error) {
+        // Si ocurre un error, mostrar el mensaje de error con SweetAlert
+        this.$swal({
+          icon: 'error',
+          title: 'Error',
+          text: 'Hubo un error al actualizar la madera. Por favor, inténtalo de nuevo más tarde.'
+        })
+      } finally {
+        // Apagar el loader después de completar la solicitud (con o sin éxito)
+        this.cargarLoader = false
+      }
+    },
+
+    cancelarFormulario() {
+      this.$router.back()
+    }
   },
   computed: {
     ...mapState(maderasStore, {
@@ -89,7 +118,6 @@ export default {
                 id="nombre"
                 type="text"
                 v-model="this.madera.nombre"
-                readonly
               />
             </div>
             <div class="col-12 d-flex align-items-center mb-2">
@@ -99,7 +127,6 @@ export default {
                 id="nombreLargo"
                 type="text"
                 v-model="this.madera.nombreLargo"
-                readonly
               />
             </div>
           </div>
@@ -116,7 +143,6 @@ export default {
                 type="checkbox"
                 id="rf"
                 v-model="this.madera.rf"
-                onclick="return false;"
               />
               <label class="form-check-label" for="rf">RF</label>
             </div>
@@ -126,7 +152,6 @@ export default {
                 type="checkbox"
                 id="MDF"
                 v-model="this.madera.mdf"
-                onclick="return false;"
               />
               <label class="form-check-label" for="MDF">MDF</label>
             </div>
@@ -136,7 +161,6 @@ export default {
                 type="checkbox"
                 id="melamina"
                 v-model="this.madera.melamina"
-                onclick="return false;"
               />
               <label class="form-check-label" for="melamina">Melamina</label>
             </div>
@@ -146,7 +170,6 @@ export default {
                 type="checkbox"
                 id="descatalogado"
                 v-model="this.madera.descatalogado"
-                onclick="return false;"
               />
               <label class="form-check-label" for="descatalogado"
                 ><strong>Descatalogado</strong></label
@@ -154,6 +177,12 @@ export default {
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- Botones de Aceptar y Cancelar -->
+      <div class="d-flex justify-content-center mt-3">
+        <button class="btn btn-secondary me-2" @click="cancelarFormulario">Cancelar</button>
+        <button class="btn btn-primary" @click="aceptarFormulario">Aceptar</button>
       </div>
     </div>
   </div>

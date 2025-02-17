@@ -44,6 +44,12 @@ const router = createRouter({
       name: 'Ver Madera',
       component: () =>
         import('../views/Administracion/Articulos/ComposicionDeArticulos/Maderas/verMaderas.vue')
+    },
+    {
+      path: '/GestionArticulos/ComposicionArticulos/Maderas/:id/editar',
+      name: 'Editar Madera',
+      component: () =>
+        import('../views/Administracion/Articulos/ComposicionDeArticulos/Maderas/editarMaderas.vue')
     }
   ]
 })
