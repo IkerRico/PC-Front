@@ -27,27 +27,21 @@ export default {
   methods: {
     ...mapActions(maderasStore, ['obtenerMaderaPorCodigo', 'actualizarMaderaPorCodigo']),
     async aceptarFormulario() {
-      // Activar el loader antes de hacer la solicitud
       this.cargarLoader = true
       try {
-        // Actualizar la madera
         await this.actualizarMaderaPorCodigo(this.madera)
-
-        // Si la actualización es exitosa, mostrar mensaje de éxito
         this.$swal({
           icon: 'success',
           title: 'Actualización exitosa',
           text: 'La madera se ha actualizado correctamente.'
         })
       } catch (error) {
-        // Si ocurre un error, mostrar el mensaje de error con SweetAlert
         this.$swal({
           icon: 'error',
           title: 'Error',
           text: 'Hubo un error al actualizar la madera. Por favor, inténtalo de nuevo más tarde.'
         })
       } finally {
-        // Apagar el loader después de completar la solicitud (con o sin éxito)
         this.cargarLoader = false
       }
     },
