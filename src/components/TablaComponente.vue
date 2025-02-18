@@ -64,7 +64,7 @@ export default {
   data() {
     return {
       paginaActual: 1,
-      itemsPorPagina: 10
+      itemsPorPagina: 8
     }
   },
   computed: {
@@ -98,7 +98,7 @@ export default {
       if (window.matchMedia('(max-width: 768px)').matches) {
         this.itemsPorPagina = 5
       } else {
-        this.itemsPorPagina = 14
+        this.itemsPorPagina = 12
       }
     },
     getColIndex(colIndex) {
