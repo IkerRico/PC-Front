@@ -31,7 +31,7 @@ export default {
     }),
   },
   methods: {
-    ...mapActions(maderasStore, ["obtenerTodasLasMaderas"]),
+    ...mapActions(maderasStore, ["obtenerTodasLasMaderas", "eliminarMaderaPorCodigo"]),
     async cargarArticulos() {
       this.cargarLoader = true;
         try {
@@ -53,7 +53,34 @@ export default {
       } else if (accion === "editar") {
         this.$router.push(`/GestionArticulos/ComposicionArticulos/Maderas/${filaData.id}/editar`);
       } else if (accion === "eliminar") {
-        // Maneja la eliminación del artículo aquí
+        this.$swal({
+          title: `¿Quieres eliminar la madera ${filaData.nombre}?`,
+          text: "No podrás revertir esto.",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Sí, eliminar',
+          cancelButtonText: 'Cancelar'
+        }).then(async (result) => {
+          if (result.isConfirmed) {
+            try {
+              await this.eliminarMaderaPorCodigo(filaData);
+              this.$swal({
+                title: 'Madera eliminada',
+                text: 'La madera ha sido eliminada correctamente',
+                icon: 'success'
+              });
+            } catch (error) {
+              this.$swal({
+                icon: "error",
+                title: "Error",
+                text:
+                  "Hubo un error al eliminar la madera. Por favor, inténtalo de nuevo más tarde.",
+              });
+            }
+          }
+        })
       }
     },
   },
