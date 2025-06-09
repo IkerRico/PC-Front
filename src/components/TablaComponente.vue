@@ -1,6 +1,9 @@
 <template>
   <div class="mt-3">
-    <div class="table-container">
+    <div class="sin-datos" v-if="datosPagina.length === 0">
+      <h1>Sin datos. Intentelo más tarde</h1>
+    </div>
+    <div v-else class="table-container">
       <table>
         <thead style="background-color: #213b81; color: white">
           <tr>
@@ -45,12 +48,11 @@
           </tr>
         </tbody>
       </table>
-    </div>
-
-    <div class="pagination d-flex justify-content-center align-items-center mt-2 gap-2">
-      <button @click="paginaAnterior" :disabled="paginaActual === 1">Anterior</button>
-      <span>{{ paginaActual }}</span>
-      <button @click="paginaSiguiente" :disabled="paginaActual === totalPaginas">Siguiente</button>
+      <div class="pagination d-flex justify-content-center align-items-center mt-2 gap-2">
+        <button @click="paginaAnterior" :disabled="paginaActual === 1">Anterior</button>
+        <span>{{ paginaActual }}</span>
+        <button @click="paginaSiguiente" :disabled="paginaActual === totalPaginas">Siguiente</button>
+      </div>
     </div>
   </div>
 </template>
@@ -178,6 +180,13 @@ th {
 .table-container {
   overflow-x: auto;
   width: 100%;
+}
+
+.sin-datos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
 }
 
 @media (max-width: 768px) {

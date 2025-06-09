@@ -5,10 +5,7 @@ const SERVER = 'http://127.0.0.1:8000/api'
 
 export const maderasStore = defineStore('maderasStore', {
   state: () => ({
-    maderas: [
-      { id: 'rob', nombre: 'roble' },
-      { id: 'cao', nombre: 'caoba' }
-    ],
+    maderas: [],
     madera: ""
   }),
   actions: {
