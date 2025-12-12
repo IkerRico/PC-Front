@@ -25,7 +25,11 @@ export default {
     }
   },
   methods: {
-    ...mapActions(maderasStore, ['obtenerMaderaPorCodigo', 'actualizarMaderaPorCodigo']),
+    ...mapActions(maderasStore, [
+      'obtenerMaderaPorCodigo',
+      'actualizarMaderaPorCodigo',
+      'eliminarMaderaPorCodigo'
+    ]),
     async aceptarFormulario() {
       this.cargarLoader = true
       try {
@@ -44,6 +48,40 @@ export default {
       } finally {
         this.cargarLoader = false
         this.$router.back()
+      }
+    },
+    async eliminarFormulario() {
+      // Preguntar al usuario
+      const result = await this.$swal({
+        title: '¿Estás seguro?',
+        text: 'Esta acción eliminará la madera permanentemente.',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Sí, eliminar',
+        cancelButtonText: 'Cancelar'
+      })
+
+      // Si el usuario confirma
+      if (result.isConfirmed) {
+        this.cargarLoader = true
+        try {
+          await this.eliminarMaderaPorCodigo(this.madera)
+          this.$swal({
+            icon: 'success',
+            title: 'Eliminación exitosa',
+            text: 'La madera ha sido eliminada correctamente.'
+          })
+          
+        } catch (error) {
+          this.$swal({
+            icon: 'error',
+            title: 'Error',
+            text: 'Hubo un error al eliminar la madera. Por favor, inténtalo de nuevo más tarde.'
+          })
+        } finally {
+          this.cargarLoader = false
+          this.$router.back()
+        }
       }
     },
 
@@ -177,7 +215,8 @@ export default {
       <!-- Botones de Aceptar y Cancelar -->
       <div class="d-flex justify-content-center mt-3">
         <button class="btn btn-secondary me-2" @click="cancelarFormulario">Cancelar</button>
-        <button class="btn btn-primary" @click="aceptarFormulario">Aceptar</button>
+        <button class="btn btn-primary me-2" @click="aceptarFormulario">Aceptar</button>
+        <button class="btn btn-danger" @click="eliminarFormulario">Eliminar</button>
       </div>
     </div>
   </div>
