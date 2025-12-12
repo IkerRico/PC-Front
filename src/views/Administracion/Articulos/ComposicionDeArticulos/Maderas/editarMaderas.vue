@@ -43,6 +43,7 @@ export default {
         })
       } finally {
         this.cargarLoader = false
+        this.$router.back()
       }
     },
 
