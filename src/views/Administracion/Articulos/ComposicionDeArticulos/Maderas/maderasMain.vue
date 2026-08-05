@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     ...mapActions(maderasStore, ["obtenerTodasLasMaderas", "eliminarMaderaPorCodigo"]),
-    async cargarArticulos() {
+    async cargarMaderas() {
       this.cargarLoader = true;
         try {
           await this.obtenerTodasLasMaderas();
@@ -85,7 +85,7 @@ export default {
     },
   },
   mounted() {
-    this.cargarArticulos();
+    this.cargarMaderas();
   },
 };
 </script>
